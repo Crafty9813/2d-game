@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-//DDD
+
 import main.GamePanel;
 import main.KeyboardIO;
 
@@ -24,13 +24,12 @@ public class Player extends Character{
     }
 
     public void setDefaultValues() {
-        x = 100;
-        y = 100;
+        x = 100; //x cor of starting pos
+        y = 100; //y cor of starting pos
         speed = 5;
         direction = "down";
     }
     public void getPlayerImage() {
-        
         try {
             up1 = ImageIO.read(getClass().getResourceAsStream("/res/player/PlayerMoveUp1.png"));
             up2 = ImageIO.read(getClass().getResourceAsStream("/res/player/PlayerMoveUp2.png"));

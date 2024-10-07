@@ -3,6 +3,7 @@ package main;
 import javax.swing.JPanel;
 
 import characters.Player;
+import tile.TileIO;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -22,14 +23,10 @@ public class GamePanel extends JPanel implements Runnable{
 
     int FPS = 60;
 
+    TileIO tileIO = new TileIO(this);
     KeyboardIO keyIO = new KeyboardIO();
     Thread gameThread;
     Player player = new Player(this, keyIO);
-
-    //players initial pos
-    int playerX = 100;
-    int playerY = 100;
-    int playerSpeed = 4;
 
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -90,7 +87,7 @@ public class GamePanel extends JPanel implements Runnable{
         while (gameThread != null) {
             currentTime = System.nanoTime();
 
-             //find time elapsed and divide it by the drawInterval to get how many frames have passed
+            //find time elapsed and divide it by the drawInterval to get how many frames have passed
             delta += (currentTime - lastTime) / drawInterval;
         
             timer += (currentTime - lastTime);
@@ -121,6 +118,7 @@ public class GamePanel extends JPanel implements Runnable{
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D)g;
+        tileIO.draw(g2);
         player.draw(g2);
         g2.dispose(); //saves memory by getting rid of any resources graphics is using
     }
