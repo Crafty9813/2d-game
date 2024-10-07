@@ -27,7 +27,7 @@ public class GamePanel extends JPanel implements Runnable{
     KeyboardIO keyIO = new KeyboardIO();
     Thread gameThread;
     Player player = new Player(this, keyIO);
-    //woah
+    
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.gray);
