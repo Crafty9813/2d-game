@@ -13,13 +13,13 @@ import java.awt.Color;
 public class GamePanel extends JPanel implements Runnable{
     
     final int originalTileSize = 16; //16x16 tile
-    final int scale = 2; //character will look like 48 x 48
+    final int scale = 3; //character will look like 48 x 48
 
     public final int tileSize = originalTileSize * scale;
-    final int maxScreenCol = 20;
-    final int maxScreenRow = 16;
-    final int screenWidth = tileSize * maxScreenCol; //
-    final int screenHeight = tileSize * maxScreenRow; //px
+    public final int maxScreenCol = 16;
+    public final int maxScreenRow = 12;
+    public final int screenWidth = tileSize * maxScreenCol; //
+    public final int screenHeight = tileSize * maxScreenRow; //px
 
     int FPS = 60;
 
@@ -30,7 +30,7 @@ public class GamePanel extends JPanel implements Runnable{
     
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
-        this.setBackground(Color.gray);
+        this.setBackground(Color.black);
         this.setDoubleBuffered(true);
         this.addKeyListener(keyIO);
         this.setFocusable(true);

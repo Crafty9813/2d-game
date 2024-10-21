@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(false);
+        window.setResizable(false); //so it doesn't mess with the tiles (maybe it wont either way but idk)
         window.setTitle("2D Game");
 
         GamePanel gamePanel = new GamePanel();
