@@ -1,6 +1,6 @@
-## Getting Started
+## Description
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This isn't finished, but so far it's just a player you can control around a map.
 
 ## Folder Structure
 
